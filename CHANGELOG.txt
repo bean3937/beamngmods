@@ -1,0 +1,44 @@
+BeamNG Engine & Transmission Swap Catalog - changelog
+=====================================================
+
+2.0  (BeamNG.drive 0.40.5)
+-----
+Engine models in vanilla cars (rebuilt from scratch):
+- The donor engine's own model is placed on the car's gearbox (its crank on the car's gearbox
+  axis) instead of only on the block; the fit check also checks the turbo / intake parts.
+- New "Engine model" slot per swap: Donor engine model / Car's own engine model / No engine model.
+- New tuning sliders (visual only): move left/right, forward/back, up/down, turn, and flip the
+  gearbox end for engines turned 90 degrees.
+- Turbo kits and intakes picked in the tuning slots now show on the swapped engine (they used
+  to show only in the engine's own car). Front-mounted intercoolers stay hidden.
+- Native engines (the car's own engine options) keep their full factory look and exhaust.
+- The car's exhaust manifold / exhaust slots move under the catalog engine, so the right
+  headers show for each engine.
+Generated parts (new):
+- Bellhousing adapters: wherever the swapped engine does not meet the car's gearbox, a part is
+  made for that engine and car, shaped by the gearbox mouth and the back of the engine (exact
+  surface contact), with flanges, bolts and ribs. Engines moved up to 15 cm by the fit check
+  get an offset bellhousing.
+- Bent exhaust pipes from the donor's header outlet to the car's exhaust (up to 80 cm, mandrel
+  bends at least 2x the pipe radius, at least 1 cm from the body, frame and suspension), sized
+  from both pipes, with a flange + bolts and a clamp.
+- Optional Blender pass (bevelled edges, smooth shading, triangle limits); models are written
+  into each car's own folder so every car only loads its own.
+- Materials: cast aluminium / dark cast iron for adapters, exhaust steel for pipes (or the
+  car's own gearbox colour when it has no texture).
+Tool:
+- The window and "py -m swapcat build" build all this by default; Blender path box added.
+- The validator also checks every generated model (it loads, triangle limits, materials,
+  node groups, visibility switch) - 0 errors in all 47 cars.
+- Report: per car and engine, the joint grade (perfect / adapter / too far / ...), the exhaust
+  result and the reason when nothing was added.
+
+1.1  (not released on its own; included in 2.0)
+-----
+- First version of visible donor engine models in vanilla cars, with fit check, fit
+  tolerance, "hide engines that don't fit" and "(clips)" options.
+
+1.0  (BeamNG.drive 0.40.5)
+-----
+- First release: Engine catalog and Transmission catalog for every car (vanilla and modded),
+  built from the installed game and mods.
